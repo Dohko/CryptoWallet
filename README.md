@@ -7,5 +7,16 @@
 
 ## Installation
 ``` bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install node
+brew install watchman
+npm install -g react-native-cli
+git clone https://github.com/Dohko/CryptoWallet.git
+cd CryptoWallet
 npm install
+```
+
+## Run on iOS
+``` bash
+react-native run-ios
 ```
