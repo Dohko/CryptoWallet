@@ -5,8 +5,6 @@
  */
 
 import React, { Component } from 'react';
-global.Random = require('random-js')
-import "./shim";
 
 import SInfo from 'react-native-sensitive-info';
 
@@ -19,9 +17,9 @@ import {
   Alert
 } from 'react-native';
 
-const bitcoin = require("bitcoinjs-lib");
-const keyPair = bitcoin.ECPair.makeRandom();
-// const address = keyPair.getAddress();
+import Bitcoin from './libs/crypto/bitcoin';
+
+const keyPair = Bitcoin.ECPair.makeRandom();
 
 var address = ""
 
@@ -47,7 +45,6 @@ export default class App extends Component<Props> {
 	  SInfo.getItem('account1', {
 	  sharedPreferencesName: 'mySharedPrefs',
 	  keychainService: 'myKeychain'}).then(value => {
-	      console.log(value) //value1
 		  if (value == null) {
 			  address = keyPair.getAddress();
 			  
@@ -55,6 +52,7 @@ export default class App extends Component<Props> {
 			  sharedPreferencesName: 'mySharedPrefs',
 			  keychainService: 'myKeychain'
 			  }).then(value => {
+                console.log(address)
 				  Alert.alert('Alert', address);
 			  });
 		  }
