@@ -1,3 +1,7 @@
+/**
+ * @providesModule lib-bitcoin
+ */
+
 global.Random = require('random-js')
 
 import "./shim";
