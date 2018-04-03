@@ -11,7 +11,7 @@ type Props = {};
 
 export default class BaseScreen extends Component<Props> {
 	
-	styles = require('ui-styles-init').styles[this.constructor.name].default;
+	styles = require('ui-styles-setup').styles[this.constructor.name].default;
 		
 	constructor() {
 		super();
